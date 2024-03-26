@@ -16,14 +16,16 @@
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
-    "push": "pnpm with-env drizzle-kit push:mysql --config src/config.ts",
-    "studio": "pnpm with-env drizzle-kit studio --config src/config.ts",
+    "push": "bun with-env drizzle-kit push:mysql --config src/config.ts",
+    "studio": "bun with-env drizzle-kit studio --config src/config.ts",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@planetscale/database": "^1.16.0",
-    "drizzle-orm": "^0.30.4"
+    "@neondatabase/serverless": "^0.9.0",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "drizzle-orm": "^0.30.4",
+    "drizzle-zod": "^0.5.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
@@ -32,7 +34,7 @@
     "dotenv-cli": "^7.4.1",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
-    "mysql2": "^3.9.2",
+    "pg": "^8.11.3",
     "prettier": "^3.2.5",
     "typescript": "^5.4.3"
   },

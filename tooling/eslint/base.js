@@ -35,7 +35,7 @@ const config = {
     "**/.eslintrc.cjs",
     ".next",
     "dist",
-    "pnpm-lock.yaml",
+    "bun.lockb",
   ],
   reportUnusedDisableDirectives: true,
 };

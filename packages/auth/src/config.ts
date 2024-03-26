@@ -1,8 +1,10 @@
 import type { DefaultSession, NextAuthConfig } from "next-auth";
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import Discord from "next-auth/providers/discord";
+import Google from "next-auth/providers/google";
+import WebAuthn from "next-auth/providers/webauthn";
 
-import { db, tableCreator } from "@acme/db";
+import { db } from "@acme/db";
+
+import { DrizzleAdapter } from "./adapter";
 
 declare module "next-auth" {
   interface Session {
@@ -13,8 +15,19 @@ declare module "next-auth" {
 }
 
 export const authConfig = {
-  adapter: DrizzleAdapter(db, tableCreator),
-  providers: [Discord],
+  adapter: DrizzleAdapter(db),
+  providers: [
+    WebAuthn({
+      name: "Passkey",
+    }),
+    Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    }),
+  ],
+  experimental: {
+    enableWebAuthn: true,
+  },
   callbacks: {
     session: (opts) => {
       if (!("user" in opts)) throw "unreachable with session strategy";
