@@ -1,8 +1,14 @@
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import type { ControllerProps, FieldPath, FieldValues } from "react-hook-form";
 import * as React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Slot } from "@radix-ui/react-slot";
-import { Controller, FormProvider, useFormContext } from "react-hook-form";
+import {
+  Controller,
+  FormProvider,
+  useForm,
+  useFormContext,
+} from "react-hook-form";
 
 import { Label } from "@acme/ui/label";
 import { cn } from "@acme/ui/utils";
@@ -168,4 +174,6 @@ export {
   FormDescription,
   FormMessage,
   FormField,
+  useForm,
+  zodResolver,
 };

@@ -1,4 +1,5 @@
 import type { DefaultSession, NextAuthConfig } from "next-auth";
+// import Apple from "next-auth/providers/apple";
 import Google from "next-auth/providers/google";
 import WebAuthn from "next-auth/providers/webauthn";
 
@@ -20,6 +21,10 @@ export const authConfig = {
     WebAuthn({
       name: "Passkey",
     }),
+    // Apple({
+    //   clientId: process.env.AUTH_APPLE_ID,
+    //   clientSecret: process.env.AUTH_APPLE_SECRET!,
+    // }),
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
