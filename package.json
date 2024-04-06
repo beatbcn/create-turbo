@@ -16,6 +16,7 @@
     "clean:workspaces": "turbo clean",
     "db:push": "bun run --cwd packages/db push",
     "db:studio": "bun run --cwd packages/db studio",
+    "ui:add": "bun run --cwd packages/ui add",
     "dev": "turbo dev --parallel",
     "format": "turbo format --continue -- --cache --cache-location node_modules/.cache/.prettiercache",
     "format:fix": "turbo format --continue -- --write --cache --cache-location node_modules/.cache/.prettiercache",
