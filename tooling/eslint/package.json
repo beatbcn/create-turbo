@@ -28,9 +28,9 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/eslint": "^8.56.6",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.3"
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
   },
   "eslintConfig": {
     "root": true,
